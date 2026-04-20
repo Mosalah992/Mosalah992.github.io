@@ -4,7 +4,7 @@
 This repository hosts my personal resume website built with GitHub Pages.
 
 ##  Live Resume
-=> https://mosalah992.github.io/
+=>https://mosalah992.github.io/resume/
 
 ##  About Me
 Cybersecurity analyst focused on:
