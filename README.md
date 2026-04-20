@@ -4,7 +4,7 @@
 This repository hosts my personal resume website built with GitHub Pages.
 
 ##  Live Resume
-=>https://mosalah992.github.io/resume/
+=> https://mosalah992.github.io/resume
 
 ##  About Me
 Cybersecurity analyst focused on:
@@ -22,15 +22,14 @@ I actively build and experiment with systems involving:
 - SIEM: Splunk, Sysmon, EVTX analysis
 - DFIR: Volatility, Wireshark, Brim
 - Languages: Python, Bash
-- Platforms: Linux, Docker , windows
+- Platforms: Linux, Docker, Windows
 
 ##  Projects
-- Bloodplague — AI adversarial simulation platform
-- Sancta — autonomous AI agent with security layers and SIEM dashboard
+- Bloodplague - AI adversarial simulation platform
+- Sancta - autonomous AI agent with security layers and SIEM dashboard
 
 ##  Contact
 - LinkedIn: www.linkedin.com/in/mohamedsalah-blue-team
-
 - Email: mosalah.desouki@gmail.com
 
 ---

@@ -1,0 +1,648 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mohamed Salah Eldin | Cybersecurity Analyst</title>
+  <meta name="description" content="Mohamed Salah Eldin, Cybersecurity Analyst focused on SOC operations, incident response, detection engineering, and AI security research.">
+  <style>
+    :root {
+      --bg: #050506;
+      --panel: rgba(10, 12, 13, 0.62);
+      --panel-strong: rgba(12, 15, 16, 0.78);
+      --line: rgba(255, 255, 255, 0.18);
+      --text: #f6fff9;
+      --muted: #a8b8b1;
+      --cyan: #00f5ff;
+      --pink: #ff2bd6;
+      --green: #a3ff12;
+      --yellow: #ffe66d;
+      --red: #ff4545;
+      --shadow: rgba(0, 245, 255, 0.2);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      background: var(--bg);
+      color: var(--text);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    #signal-rain {
+      height: 100%;
+      inset: 0;
+      position: fixed;
+      width: 100%;
+      z-index: -3;
+    }
+
+    .backdrop {
+      background:
+        linear-gradient(90deg, rgba(0, 245, 255, 0.16) 1px, transparent 1px),
+        linear-gradient(0deg, rgba(255, 43, 214, 0.12) 1px, transparent 1px);
+      background-size: 86px 86px;
+      inset: 0;
+      mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), transparent 76%);
+      position: fixed;
+      z-index: -2;
+    }
+
+    .scanline {
+      background: repeating-linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0.035),
+        rgba(255, 255, 255, 0.035) 1px,
+        transparent 1px,
+        transparent 4px
+      );
+      inset: 0;
+      pointer-events: none;
+      position: fixed;
+      z-index: -1;
+    }
+
+    .page {
+      margin: 0 auto;
+      max-width: 1160px;
+      padding: 28px 22px 64px;
+      position: relative;
+    }
+
+    .nav {
+      align-items: center;
+      display: flex;
+      gap: 16px;
+      justify-content: space-between;
+      min-height: 52px;
+    }
+
+    .brand {
+      color: var(--text);
+      font-size: 0.9rem;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      align-items: center;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: flex-end;
+    }
+
+    .nav-link,
+    .glass-button {
+      align-items: center;
+      backdrop-filter: blur(18px);
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0.04));
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      box-shadow: 0 0 22px rgba(0, 245, 255, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.18);
+      color: var(--text);
+      display: inline-flex;
+      font-weight: 800;
+      justify-content: center;
+      min-height: 44px;
+      padding: 12px 16px;
+      transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+    }
+
+    .nav-link {
+      font-size: 0.9rem;
+      min-height: 38px;
+      padding: 9px 12px;
+    }
+
+    .glass-button:hover,
+    .nav-link:hover {
+      border-color: rgba(0, 245, 255, 0.64);
+      box-shadow: 0 0 30px var(--shadow), inset 0 1px 0 rgba(255, 255, 255, 0.24);
+      transform: translateY(-2px);
+    }
+
+    .glass-button.primary {
+      background: linear-gradient(135deg, rgba(0, 245, 255, 0.22), rgba(255, 43, 214, 0.16));
+      border-color: rgba(0, 245, 255, 0.6);
+    }
+
+    .hero {
+      align-items: center;
+      display: grid;
+      gap: 36px;
+      grid-template-columns: minmax(0, 1.08fr) minmax(280px, 0.92fr);
+      min-height: 76vh;
+      padding: 76px 0 54px;
+    }
+
+    .eyebrow {
+      color: var(--green);
+      font-family: "Cascadia Mono", "SFMono-Regular", Consolas, monospace;
+      font-size: 0.92rem;
+      font-weight: 800;
+      margin: 0 0 16px;
+    }
+
+    h1 {
+      font-size: 4.4rem;
+      line-height: 0.98;
+      margin: 0;
+      max-width: 800px;
+      text-wrap: balance;
+    }
+
+    .glitch {
+      color: var(--text);
+      display: inline-block;
+      position: relative;
+      text-shadow: 2px 0 var(--cyan), -2px 0 var(--pink), 0 0 28px rgba(0, 245, 255, 0.28);
+    }
+
+    .hero-copy {
+      color: var(--muted);
+      font-size: 1.14rem;
+      line-height: 1.7;
+      margin: 24px 0 0;
+      max-width: 720px;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 32px;
+    }
+
+    .terminal {
+      backdrop-filter: blur(20px);
+      background: var(--panel);
+      border: 1px solid rgba(0, 245, 255, 0.24);
+      border-radius: 8px;
+      box-shadow: 0 24px 80px rgba(0, 0, 0, 0.42), 0 0 42px rgba(0, 245, 255, 0.12);
+      overflow: hidden;
+    }
+
+    .terminal-bar {
+      align-items: center;
+      background: rgba(255, 255, 255, 0.08);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      display: flex;
+      gap: 8px;
+      min-height: 38px;
+      padding: 0 14px;
+    }
+
+    .dot {
+      border-radius: 999px;
+      display: block;
+      height: 10px;
+      width: 10px;
+    }
+
+    .dot.red {
+      background: var(--red);
+    }
+
+    .dot.yellow {
+      background: var(--yellow);
+    }
+
+    .dot.green {
+      background: var(--green);
+    }
+
+    .terminal-body {
+      display: grid;
+      gap: 16px;
+      padding: 22px;
+    }
+
+    .terminal-line {
+      color: var(--muted);
+      font-family: "Cascadia Mono", "SFMono-Regular", Consolas, monospace;
+      font-size: 0.94rem;
+      line-height: 1.65;
+      margin: 0;
+      overflow-wrap: anywhere;
+    }
+
+    .terminal-line strong {
+      color: var(--cyan);
+      font-weight: 800;
+    }
+
+    .status-grid {
+      display: grid;
+      gap: 12px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .status {
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 8px;
+      padding: 14px;
+    }
+
+    .status span {
+      color: var(--green);
+      display: block;
+      font-family: "Cascadia Mono", "SFMono-Regular", Consolas, monospace;
+      font-size: 0.82rem;
+      margin-bottom: 6px;
+    }
+
+    .status b {
+      color: var(--text);
+      font-size: 1rem;
+    }
+
+    .section {
+      padding: 40px 0;
+    }
+
+    .section-title {
+      align-items: center;
+      display: flex;
+      gap: 14px;
+      margin-bottom: 18px;
+    }
+
+    .section-title h2 {
+      font-size: 1.6rem;
+      margin: 0;
+    }
+
+    .section-title::after {
+      background: linear-gradient(90deg, var(--cyan), transparent);
+      content: "";
+      flex: 1;
+      height: 1px;
+    }
+
+    .pill-grid,
+    .project-grid,
+    .credential-grid {
+      display: grid;
+      gap: 14px;
+    }
+
+    .pill-grid {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .project-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .credential-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .pill,
+    .project,
+    .credential {
+      backdrop-filter: blur(18px);
+      background: var(--panel-strong);
+      border: 1px solid rgba(255, 255, 255, 0.13);
+      border-radius: 8px;
+      box-shadow: 0 18px 44px rgba(0, 0, 0, 0.24);
+      min-height: 100%;
+    }
+
+    .pill {
+      color: var(--text);
+      font-weight: 800;
+      padding: 18px;
+    }
+
+    .pill span {
+      color: var(--cyan);
+      display: block;
+      font-family: "Cascadia Mono", "SFMono-Regular", Consolas, monospace;
+      font-size: 0.82rem;
+      margin-bottom: 10px;
+    }
+
+    .project {
+      padding: 22px;
+    }
+
+    .project h3,
+    .credential h3 {
+      font-size: 1.08rem;
+      margin: 0 0 10px;
+    }
+
+    .project p,
+    .credential p {
+      color: var(--muted);
+      line-height: 1.65;
+      margin: 0;
+    }
+
+    .credential {
+      overflow: hidden;
+    }
+
+    .credential img {
+      aspect-ratio: 16 / 9;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.13);
+      height: auto;
+      object-fit: cover;
+      width: 100%;
+    }
+
+    .credential-content {
+      padding: 18px;
+    }
+
+    .contact-band {
+      align-items: center;
+      backdrop-filter: blur(18px);
+      background: linear-gradient(135deg, rgba(0, 245, 255, 0.14), rgba(255, 43, 214, 0.11), rgba(163, 255, 18, 0.08));
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 8px;
+      display: flex;
+      gap: 18px;
+      justify-content: space-between;
+      padding: 24px;
+    }
+
+    .contact-band h2 {
+      margin: 0 0 8px;
+    }
+
+    .contact-band p {
+      color: var(--muted);
+      margin: 0;
+    }
+
+    .footer {
+      color: var(--muted);
+      font-family: "Cascadia Mono", "SFMono-Regular", Consolas, monospace;
+      font-size: 0.82rem;
+      padding-top: 34px;
+    }
+
+    @media (max-width: 860px) {
+      .hero,
+      .pill-grid,
+      .project-grid,
+      .credential-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        min-height: auto;
+        padding-top: 56px;
+      }
+
+      h1 {
+        font-size: 3.2rem;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .page {
+        padding: 18px 16px 46px;
+      }
+
+      .nav {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .nav-links {
+        justify-content: flex-start;
+      }
+
+      h1 {
+        font-size: 2.45rem;
+      }
+
+      .hero-copy {
+        font-size: 1rem;
+      }
+
+      .actions,
+      .contact-band {
+        align-items: stretch;
+        flex-direction: column;
+      }
+
+      .glass-button,
+      .nav-link {
+        width: 100%;
+      }
+
+      .status-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <canvas id="signal-rain" aria-hidden="true"></canvas>
+  <div class="backdrop" aria-hidden="true"></div>
+  <div class="scanline" aria-hidden="true"></div>
+
+  <main class="page">
+    <nav class="nav" aria-label="Primary navigation">
+      <a class="brand" href="/">Mohamed Salah Eldin</a>
+      <div class="nav-links">
+        <a class="nav-link" href="#focus">Focus</a>
+        <a class="nav-link" href="#projects">Projects</a>
+        <a class="nav-link" href="#credentials">Credentials</a>
+        <a class="nav-link" href="#contact">Contact</a>
+      </div>
+    </nav>
+
+    <section class="hero" aria-labelledby="hero-title">
+      <div>
+        <p class="eyebrow">SOC // DFIR // AI SECURITY</p>
+        <h1 id="hero-title"><span class="glitch">Cybersecurity Analyst</span> building sharper detection pipelines.</h1>
+        <p class="hero-copy">
+          I work across SOC operations, incident response, SIEM telemetry, digital forensics, and adversarial LLM research.
+        </p>
+        <div class="actions" aria-label="Resume actions">
+          <a class="glass-button primary" href="/resume">Open Resume</a>
+          <a class="glass-button" href="/resume/Mohamed-Salaheldin.pdf">Download PDF</a>
+          <a class="glass-button" href="https://www.linkedin.com/in/mohamedsalah-blue-team">LinkedIn</a>
+        </div>
+      </div>
+
+      <aside class="terminal" aria-label="Profile snapshot">
+        <div class="terminal-bar">
+          <span class="dot red"></span>
+          <span class="dot yellow"></span>
+          <span class="dot green"></span>
+        </div>
+        <div class="terminal-body">
+          <p class="terminal-line"><strong>analyst@mosalah</strong>:~$ whoami</p>
+          <p class="terminal-line">Mohamed Salah Eldin // cybersecurity analyst // blue team operator</p>
+          <div class="status-grid">
+            <div class="status">
+              <span>MODE</span>
+              <b>Detection Engineering</b>
+            </div>
+            <div class="status">
+              <span>STACK</span>
+              <b>Splunk, Sysmon, EVTX</b>
+            </div>
+            <div class="status">
+              <span>FIELD</span>
+              <b>Incident Response</b>
+            </div>
+            <div class="status">
+              <span>RESEARCH</span>
+              <b>Adversarial AI</b>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <section class="section" id="focus">
+      <div class="section-title">
+        <h2>Focus</h2>
+      </div>
+      <div class="pill-grid">
+        <div class="pill"><span>01</span>SOC Operations</div>
+        <div class="pill"><span>02</span>Incident Response</div>
+        <div class="pill"><span>03</span>Digital Forensics</div>
+        <div class="pill"><span>04</span>AI Security Research</div>
+      </div>
+    </section>
+
+    <section class="section" id="projects">
+      <div class="section-title">
+        <h2>Projects</h2>
+      </div>
+      <div class="project-grid">
+        <article class="project">
+          <h3>Bloodplague</h3>
+          <p>AI adversarial simulation platform for testing agent behavior, prompt injection pressure, and defensive controls.</p>
+        </article>
+        <article class="project">
+          <h3>Sancta</h3>
+          <p>Autonomous AI agent work with security layers, telemetry, and SIEM dashboard experiments.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="credentials">
+      <div class="section-title">
+        <h2>Credentials</h2>
+      </div>
+      <div class="credential-grid">
+        <article class="credential">
+          <img src="/certs/Isc2%20CC.jpg" alt="ISC2 Certified in Cybersecurity certificate">
+          <div class="credential-content">
+            <h3>ISC2 Certified in Cybersecurity</h3>
+            <p>Security principles, access controls, network security, operations, and risk.</p>
+          </div>
+        </article>
+        <article class="credential">
+          <img src="/certs/Amit%20Blueteam%20Diploma.jpg" alt="AMIT Blue Team diploma certificate">
+          <div class="credential-content">
+            <h3>AMIT Blue Team Diploma</h3>
+            <p>SOC workflows, blue team tooling, investigation practice, and defensive analysis.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="contact-band">
+        <div>
+          <h2>Let's connect.</h2>
+          <p>Open to cybersecurity, SOC, DFIR, and AI security conversations.</p>
+        </div>
+        <div class="actions">
+          <a class="glass-button primary" href="/resume">Resume</a>
+          <a class="glass-button" href="mailto:mosalah.desouki@gmail.com">Email</a>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      Built for GitHub Pages // live resume: https://mosalah992.github.io/resume
+    </footer>
+  </main>
+
+  <script>
+    const canvas = document.querySelector("#signal-rain");
+    const context = canvas.getContext("2d");
+    const glyphs = "01{}[]<>/\\|SOCDFIRAISEC";
+    const colors = ["#00f5ff", "#ff2bd6", "#a3ff12", "#ffe66d"];
+    let columns = [];
+    let width = 0;
+    let height = 0;
+    const fontSize = 18;
+
+    function resizeCanvas() {
+      const scale = window.devicePixelRatio || 1;
+      width = window.innerWidth;
+      height = window.innerHeight;
+      canvas.width = Math.floor(width * scale);
+      canvas.height = Math.floor(height * scale);
+      canvas.style.width = `${width}px`;
+      canvas.style.height = `${height}px`;
+      context.setTransform(scale, 0, 0, scale, 0, 0);
+      columns = Array.from({ length: Math.ceil(width / fontSize) }, () => Math.random() * -height);
+    }
+
+    function drawRain() {
+      context.fillStyle = "rgba(5, 5, 6, 0.18)";
+      context.fillRect(0, 0, width, height);
+      context.font = `${fontSize}px Cascadia Mono, Consolas, monospace`;
+
+      columns.forEach((position, index) => {
+        const glyph = glyphs[Math.floor(Math.random() * glyphs.length)];
+        context.fillStyle = colors[index % colors.length];
+        context.globalAlpha = 0.78;
+        context.fillText(glyph, index * fontSize, position);
+        columns[index] = position > height + Math.random() * 700 ? 0 : position + fontSize;
+      });
+
+      context.globalAlpha = 1;
+      requestAnimationFrame(drawRain);
+    }
+
+    resizeCanvas();
+    drawRain();
+    window.addEventListener("resize", resizeCanvas);
+  </script>
+</body>
+</html>
