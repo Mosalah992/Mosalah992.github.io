@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Mohamed Salah Eldin | Cybersecurity Analyst</title>
   <meta name="description" content="Mohamed Salah Eldin, Cybersecurity Analyst focused on SOC operations, incident response, detection engineering, and AI security research.">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&display=swap">
   <style>
     :root {
       --bg: #050506;
@@ -709,6 +710,377 @@
       }
     }
   </style>
+  <style>
+    .cli-wrap,
+    .cli-wrap * {
+      box-sizing: border-box;
+    }
+
+    .cli-wrap {
+      color: #b8d8b8;
+      font-family: "IBM Plex Mono", "Courier New", monospace;
+      width: 100%;
+    }
+
+    .cli-wrap a {
+      color: #40c4ff;
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 2px;
+    }
+
+    .cli-wrap a:hover {
+      color: #80d8ff;
+    }
+
+    .cli-shell-window {
+      background: #0a0f0a;
+      border: 1px solid #1a2e1a;
+      border-radius: 10px;
+      box-shadow: 0 24px 80px rgba(0, 0, 0, 0.42);
+      overflow: hidden;
+    }
+
+    .cli-shell-chrome {
+      align-items: center;
+      background: #111811;
+      border-bottom: 1px solid #1a2e1a;
+      display: flex;
+      gap: 12px;
+      min-height: 40px;
+      padding: 0 14px;
+    }
+
+    .cli-shell-dots {
+      display: flex;
+      gap: 8px;
+    }
+
+    .cli-shell-dot {
+      border-radius: 999px;
+      display: block;
+      height: 11px;
+      width: 11px;
+    }
+
+    .cli-shell-dot.red {
+      background: #ff5f57;
+    }
+
+    .cli-shell-dot.yellow {
+      background: #febc2e;
+    }
+
+    .cli-shell-dot.green {
+      background: #28c840;
+    }
+
+    .cli-shell-title {
+      color: #3a5a3a;
+      font-size: 0.84rem;
+      line-height: 1;
+    }
+
+    .cli-shell-body {
+      background: #0a0f0a;
+      position: relative;
+    }
+
+    .cli-shell-matrix {
+      height: 100%;
+      inset: 0;
+      opacity: 0.04;
+      pointer-events: none;
+      position: absolute;
+      width: 100%;
+      z-index: 1;
+    }
+
+    .cli-shell-output,
+    .cli-shell-input-row {
+      position: relative;
+      z-index: 2;
+    }
+
+    .cli-shell-output {
+      color: #b8d8b8;
+      height: 400px;
+      overflow-y: auto;
+      padding: 18px 18px 12px;
+      scrollbar-color: #1a3a1a #0a0f0a;
+      scrollbar-width: thin;
+    }
+
+    .cli-shell-output::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    .cli-shell-output::-webkit-scrollbar-track {
+      background: #0a0f0a;
+    }
+
+    .cli-shell-output::-webkit-scrollbar-thumb {
+      background: #1a3a1a;
+      border: 2px solid #0a0f0a;
+      border-radius: 999px;
+    }
+
+    .cli-shell-output::-webkit-scrollbar-thumb:hover {
+      background: #225022;
+    }
+
+    .cli-shell-input-row {
+      align-items: center;
+      background: #080d08;
+      border-top: 1px solid #1a2e1a;
+      display: flex;
+      gap: 12px;
+      padding: 12px 16px;
+      position: sticky;
+      bottom: 0;
+    }
+
+    .cli-shell-prompt {
+      align-items: center;
+      display: inline-flex;
+      flex-shrink: 0;
+      font-size: 0.9rem;
+      gap: 0;
+      white-space: nowrap;
+    }
+
+    .cli-shell-prompt-host {
+      color: #69f0ae;
+    }
+
+    .cli-shell-prompt-path {
+      color: #40c4ff;
+    }
+
+    .cli-shell-prompt-punct {
+      color: #4a6a4a;
+    }
+
+    .cli-shell-command-text {
+      color: #e8f5e9;
+    }
+
+    .cli-shell-input {
+      background: transparent;
+      border: 0;
+      caret-color: #00e676;
+      color: #e8f5e9;
+      flex: 1;
+      font: inherit;
+      min-width: 0;
+      outline: none;
+      padding: 0;
+    }
+
+    .cli-shell-input::placeholder {
+      color: transparent;
+    }
+
+    .cli-shell-line {
+      color: #b8d8b8;
+      font-size: 0.92rem;
+      line-height: 1.7;
+      margin: 0;
+      overflow-wrap: anywhere;
+    }
+
+    .cli-shell-line + .cli-shell-line {
+      margin-top: 2px;
+    }
+
+    .cli-shell-entry {
+      margin-bottom: 12px;
+    }
+
+    .cli-shell-entry:last-child {
+      margin-bottom: 0;
+    }
+
+    .cli-shell-blank {
+      height: 12px;
+    }
+
+    .cli-shell-divider {
+      color: #4a6a4a;
+      letter-spacing: 0.02em;
+    }
+
+    .cli-shell-accent {
+      color: #00e676;
+    }
+
+    .cli-shell-dim {
+      color: #4a6a4a;
+    }
+
+    .cli-shell-ok {
+      color: #00e676;
+      font-weight: 700;
+    }
+
+    .cli-shell-error {
+      color: #ef5350;
+    }
+
+    .cli-shell-warning {
+      color: #ffd54f;
+    }
+
+    .cli-shell-label {
+      color: #00bcd4;
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .cli-shell-panel-grid,
+    .cli-shell-metric-grid {
+      display: grid;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .cli-shell-panel-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .cli-shell-metric-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      margin-top: 12px;
+      max-width: 380px;
+    }
+
+    .cli-shell-card,
+    .cli-shell-metric-card {
+      background: rgba(8, 13, 8, 0.82);
+      border: 1px solid #1a3a1a;
+      border-radius: 4px;
+      padding: 8px 10px;
+    }
+
+    .cli-shell-metric-card {
+      border-radius: 3px;
+      padding: 6px 8px;
+    }
+
+    .cli-shell-metric-card .cli-shell-label {
+      font-size: 10px;
+    }
+
+    .cli-shell-card-value {
+      color: #b8d8b8;
+      margin-top: 4px;
+    }
+
+    .cli-shell-list,
+    .cli-shell-links {
+      display: grid;
+      gap: 4px;
+      margin-top: 10px;
+    }
+
+    .cli-shell-project {
+      margin-top: 14px;
+    }
+
+    .cli-shell-project:first-of-type {
+      margin-top: 10px;
+    }
+
+    .cli-shell-project-title {
+      color: #00e676;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .cli-shell-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+      margin-bottom: 8px;
+    }
+
+    .cli-shell-tag {
+      background: #0a1f0a;
+      border: 1px solid #1a3a1a;
+      border-radius: 2px;
+      color: #69f0ae;
+      display: inline-flex;
+      font-size: 11px;
+      padding: 2px 8px;
+    }
+
+    .cli-shell-metric-value {
+      color: #00e676;
+      display: block;
+      font-size: 15px;
+      font-weight: 700;
+      margin-top: 3px;
+    }
+
+    .cli-shell-metric-value.warning {
+      color: #ffd54f;
+      font-size: 13px;
+    }
+
+    .cli-shell-link-row {
+      align-items: baseline;
+      column-gap: 10px;
+      display: grid;
+      grid-template-columns: 78px minmax(0, auto) minmax(0, 1fr);
+    }
+
+    .cli-shell-link-url {
+      color: #4a6a4a;
+      font-size: 0.84rem;
+      overflow-wrap: anywhere;
+    }
+
+    .cli-shell-help {
+      display: grid;
+      gap: 4px;
+      margin-top: 10px;
+    }
+
+    .cli-shell-help-row {
+      align-items: baseline;
+      column-gap: 12px;
+      display: grid;
+      grid-template-columns: 90px minmax(0, 1fr);
+    }
+
+    .cli-shell-help-command {
+      color: #00e676;
+    }
+
+    .cli-shell-bullet {
+      color: #b8d8b8;
+    }
+
+    .cli-terminal-section {
+      padding: 42px 0 30px;
+    }
+
+    @media (max-width: 639px) {
+      .cli-shell-panel-grid,
+      .cli-shell-metric-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .cli-shell-link-row {
+        grid-template-columns: 1fr;
+      }
+
+      .cli-shell-link-url {
+        padding-left: 18px;
+      }
+    }
+  </style>
 </head>
 <body>
   <canvas id="signal-rain" aria-hidden="true"></canvas>
@@ -742,49 +1114,29 @@
       </div>
     </nav>
 
-    <section class="hero" aria-labelledby="hero-title">
-      <div>
-        <p class="eyebrow">SOC ANALYST // AI SECURITY RESEARCHER</p>
-        <h1 id="hero-title"><span class="glitch">SOC Analyst &amp; AI Security Researcher</span></h1>
-        <p class="hero-copy">
-          Building adversarial multi-agent systems and detection pipelines.
-        </p>
-        <div class="actions" aria-label="Resume actions">
-          <a class="glass-button primary" href="/resume">Open Resume</a>
-          <a class="glass-button" href="/resume/Mohamed-Salaheldin.pdf">Download PDF</a>
-          <a class="glass-button" href="https://www.linkedin.com/in/mohamedsalah-blue-team">LinkedIn</a>
-        </div>
-      </div>
-
-      <aside class="terminal" aria-label="Profile snapshot">
-        <div class="terminal-bar">
-          <span class="dot red"></span>
-          <span class="dot yellow"></span>
-          <span class="dot green"></span>
-        </div>
-        <div class="terminal-body">
-          <p class="terminal-line"><strong>analyst@mosalah</strong>:~$ whoami</p>
-          <p class="terminal-line">Mohamed Salah Eldin // cybersecurity analyst // blue team operator</p>
-          <div class="status-grid">
-            <div class="status">
-              <span>MODE</span>
-              <b>Detection Engineering</b>
+    <section class="cli-terminal-section" aria-label="Interactive shell">
+      <div class="cli-wrap">
+        <div class="cli-shell-window" role="application" aria-label="Interactive portfolio terminal">
+          <div class="cli-shell-chrome">
+            <div class="cli-shell-dots" aria-hidden="true">
+              <span class="cli-shell-dot red"></span>
+              <span class="cli-shell-dot yellow"></span>
+              <span class="cli-shell-dot green"></span>
             </div>
-            <div class="status">
-              <span>STACK</span>
-              <b>Splunk, Sysmon, EVTX</b>
-            </div>
-            <div class="status">
-              <span>FIELD</span>
-              <b>Incident Response</b>
-            </div>
-            <div class="status">
-              <span>RESEARCH</span>
-              <b>Adversarial AI</b>
+            <div class="cli-shell-title">analyst@mosalah &mdash; bash</div>
+          </div>
+          <div class="cli-shell-body">
+            <canvas class="cli-shell-matrix" aria-hidden="true"></canvas>
+            <div class="cli-shell-output" aria-live="polite"></div>
+            <div class="cli-shell-input-row">
+              <div class="cli-shell-prompt" aria-hidden="true">
+                <span class="cli-shell-prompt-host">analyst@mosalah</span><span class="cli-shell-prompt-punct">:</span><span class="cli-shell-prompt-path">~</span><span class="cli-shell-prompt-punct">$</span>
+              </div>
+              <input class="cli-shell-input" type="text" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Terminal input">
             </div>
           </div>
         </div>
-      </aside>
+      </div>
     </section>
 
     <section class="metrics-strip" aria-label="Project metrics">
@@ -1150,6 +1502,356 @@
     resizeCanvas();
     drawRain();
     window.addEventListener("resize", resizeCanvas);
+
+    (() => {
+      const cliRoot = document.querySelector(".cli-wrap");
+
+      if (!cliRoot) {
+        return;
+      }
+
+      const cliOutput = cliRoot.querySelector(".cli-shell-output");
+      const cliInput = cliRoot.querySelector(".cli-shell-input");
+      const cliMatrix = cliRoot.querySelector(".cli-shell-matrix");
+      const cliBody = cliRoot.querySelector(".cli-shell-body");
+      const cliCommands = ["whoami", "resume", "projects", "contact", "clear", "help"];
+      const cliHistory = [];
+      let cliHistoryIndex = 0;
+      const cliMatrixChars = Array.from("アイウエオカキクケコSCUDQTIONEXFILT01ABCDEF><{}[];");
+      const cliDivider = "\u2500".repeat(42);
+      const cliColumnWidth = 14;
+      let cliDrops = [];
+      let cliMatrixWidth = 0;
+      let cliMatrixHeight = 0;
+
+      function escapeHtml(value) {
+        return value
+          .replaceAll("&", "&amp;")
+          .replaceAll("<", "&lt;")
+          .replaceAll(">", "&gt;")
+          .replaceAll("\"", "&quot;")
+          .replaceAll("'", "&#39;");
+      }
+
+      function scrollCliToBottom() {
+        cliOutput.scrollTop = cliOutput.scrollHeight;
+      }
+
+      function appendCliBlock(html) {
+        const block = document.createElement("div");
+        block.className = "cli-shell-entry";
+        block.innerHTML = html;
+        cliOutput.append(block);
+        scrollCliToBottom();
+      }
+
+      function appendCliLine(html, extraClass = "") {
+        const className = extraClass ? `cli-shell-line ${extraClass}` : "cli-shell-line";
+        appendCliBlock(`<div class="${className}">${html}</div>`);
+      }
+
+      function appendCliBlank() {
+        appendCliBlock('<div class="cli-shell-blank" aria-hidden="true"></div>');
+      }
+
+      function appendCliPrompt(commandText) {
+        appendCliBlock(
+          `<div class="cli-shell-line">` +
+            `<span class="cli-shell-prompt-host">analyst@mosalah</span>` +
+            `<span class="cli-shell-prompt-punct">:</span>` +
+            `<span class="cli-shell-prompt-path">~</span>` +
+            `<span class="cli-shell-prompt-punct">$</span> ` +
+            `<span class="cli-shell-command-text">${escapeHtml(commandText)}</span>` +
+          `</div>`
+        );
+      }
+
+      function appendCliBullet(text) {
+        return `<div class="cli-shell-line"><span class="cli-shell-bullet">&#9656;</span> ${text}</div>`;
+      }
+
+      function cliWhoAmI() {
+        appendCliLine(
+          '<span class="cli-shell-accent">Mohamed Salah Eldin</span><span class="cli-shell-dim"> // cybersecurity analyst // blue team operator</span>'
+        );
+        appendCliBlock(
+          `<div class="cli-shell-panel-grid">` +
+            `<div class="cli-shell-card"><div class="cli-shell-label">MODE</div><div class="cli-shell-card-value">Detection Engineering</div></div>` +
+            `<div class="cli-shell-card"><div class="cli-shell-label">STACK</div><div class="cli-shell-card-value">Splunk, Sysmon, EVTX</div></div>` +
+            `<div class="cli-shell-card"><div class="cli-shell-label">FIELD</div><div class="cli-shell-card-value">Incident Response</div></div>` +
+            `<div class="cli-shell-card"><div class="cli-shell-label">RESEARCH</div><div class="cli-shell-card-value">Adversarial AI</div></div>` +
+          `</div>`
+        );
+        appendCliBlock(
+          `<div class="cli-shell-list">` +
+            `<div class="cli-shell-label">CERTS</div>` +
+            appendCliBullet("ISC2 Certified in Cybersecurity (CC)") +
+            appendCliBullet("AMIT Blue Team Diploma") +
+          `</div>`
+        );
+        appendCliBlock(
+          `<div class="cli-shell-list">` +
+            `<div class="cli-shell-label">FOCUS</div>` +
+            appendCliBullet("SOC Operations") +
+            appendCliBullet("Incident Response") +
+            appendCliBullet("Digital Forensics") +
+            appendCliBullet("AI Security Research") +
+          `</div>`
+        );
+      }
+
+      function cliResume() {
+        appendCliLine("resume &mdash; Mohamed Salaheldin");
+        appendCliBlock(
+          `<div class="cli-shell-links">` +
+            `<div class="cli-shell-link-row">` +
+              `<span class="cli-shell-bullet">&#9656;</span>` +
+              `<a href="https://mosalah992.github.io/resume" target="_blank" rel="noopener noreferrer">View online &rarr;</a>` +
+              `<span class="cli-shell-link-url">https://mosalah992.github.io/resume</span>` +
+            `</div>` +
+            `<div class="cli-shell-link-row">` +
+              `<span class="cli-shell-bullet">&#9656;</span>` +
+              `<a href="https://mosalah992.github.io/resume/Mohamed-Salaheldin.pdf" target="_blank" rel="noopener noreferrer">Download PDF &rarr;</a>` +
+              `<span class="cli-shell-link-url">https://mosalah992.github.io/resume/Mohamed-Salaheldin.pdf</span>` +
+            `</div>` +
+          `</div>`
+        );
+      }
+
+      function cliProjects() {
+        appendCliLine("ACTIVE RESEARCH PROJECTS", "cli-shell-label");
+        appendCliBlock(
+          `<div class="cli-shell-project">` +
+            `<div class="cli-shell-project-title">Project 01: Epidemic Lab</div>` +
+            `<div class="cli-shell-tags">` +
+              `<span class="cli-shell-tag">AI Red-Team</span>` +
+              `<span class="cli-shell-tag">Multi-Agent</span>` +
+              `<span class="cli-shell-tag">C2 Simulation</span>` +
+            `</div>` +
+            `<div class="cli-shell-line">Multi-agent AI adversarial simulation platform.</div>` +
+            `<div class="cli-shell-line">Models behavioral contamination across LLM-powered agents.</div>` +
+            `<div class="cli-shell-metric-grid">` +
+              `<div class="cli-shell-metric-card"><div class="cli-shell-label">EVENTS</div><span class="cli-shell-metric-value">22,000+</span></div>` +
+              `<div class="cli-shell-metric-card"><div class="cli-shell-label">R_ai</div><span class="cli-shell-metric-value">&asymp; 2.1</span></div>` +
+              `<div class="cli-shell-metric-card"><div class="cli-shell-label">SOAK RUN</div><span class="cli-shell-metric-value">9.6 hrs</span></div>` +
+              `<div class="cli-shell-metric-card"><div class="cli-shell-label">STAGE</div><span class="cli-shell-metric-value warning">EXFILTRATION</span></div>` +
+            `</div>` +
+          `</div>`
+        );
+        appendCliBlock(
+          `<div class="cli-shell-project">` +
+            `<div class="cli-shell-project-title">Project 02: SANCTA-GPT</div>` +
+            `<div class="cli-shell-tags">` +
+              `<span class="cli-shell-tag">LLM Security</span>` +
+              `<span class="cli-shell-tag">Detection</span>` +
+            `</div>` +
+            `<div class="cli-shell-line">Autonomous AI agent with multi-stage security training pipeline.</div>` +
+            `<div class="cli-shell-line">Prompt injection detection, behavioral drift monitoring, telemetry.</div>` +
+          `</div>`
+        );
+      }
+
+      function cliContact() {
+        appendCliLine("CONTACT CHANNELS", "cli-shell-label");
+        appendCliBlock(
+          `<div class="cli-shell-links">` +
+            `<div class="cli-shell-link-row">` +
+              `<span class="cli-shell-dim">email</span>` +
+              `<a href="mailto:mosalah.desouki@gmail.com" target="_blank" rel="noopener noreferrer">mosalah.desouki@gmail.com</a>` +
+              `<span></span>` +
+            `</div>` +
+            `<div class="cli-shell-link-row">` +
+              `<span class="cli-shell-dim">linkedin</span>` +
+              `<a href="https://linkedin.com/in/mohamedsalah-blue-team" target="_blank" rel="noopener noreferrer">linkedin.com/in/mohamedsalah-blue-team</a>` +
+              `<span></span>` +
+            `</div>` +
+            `<div class="cli-shell-link-row">` +
+              `<span class="cli-shell-dim">github</span>` +
+              `<a href="https://github.com/Mosalah992" target="_blank" rel="noopener noreferrer">github.com/Mosalah992</a>` +
+              `<span></span>` +
+            `</div>` +
+          `</div>`
+        );
+        appendCliLine("Open to: SOC &middot; DFIR &middot; AI Security Research &middot; Red-Team Engineering", "cli-shell-dim");
+      }
+
+      function cliHelp() {
+        appendCliLine(cliDivider, "cli-shell-divider");
+        appendCliLine("available commands");
+        appendCliLine(cliDivider, "cli-shell-divider");
+        appendCliBlock(
+          `<div class="cli-shell-help">` +
+            `<div class="cli-shell-help-row"><span class="cli-shell-help-command">whoami</span><span>identity, stack, certs, focus areas</span></div>` +
+            `<div class="cli-shell-help-row"><span class="cli-shell-help-command">resume</span><span>view or download resume</span></div>` +
+            `<div class="cli-shell-help-row"><span class="cli-shell-help-command">projects</span><span>active research projects + metrics</span></div>` +
+            `<div class="cli-shell-help-row"><span class="cli-shell-help-command">contact</span><span>email, linkedin, github</span></div>` +
+            `<div class="cli-shell-help-row"><span class="cli-shell-help-command">clear</span><span>clear the terminal</span></div>` +
+            `<div class="cli-shell-help-row"><span class="cli-shell-help-command">help</span><span>show this guide</span></div>` +
+          `</div>`
+        );
+        appendCliLine("tip: use &uarr; / &darr; to navigate command history", "cli-shell-dim");
+      }
+
+      const cliHandlers = {
+        whoami: cliWhoAmI,
+        resume: cliResume,
+        projects: cliProjects,
+        contact: cliContact,
+        help: cliHelp,
+      };
+
+      function runCliCommand(rawInput, options = {}) {
+        const commandText = rawInput.trim();
+        const commandKey = commandText.toLowerCase();
+
+        if (!commandText) {
+          cliInput.focus();
+          return;
+        }
+
+        if (!options.skipHistory) {
+          cliHistory.push(commandText);
+          cliHistoryIndex = cliHistory.length;
+        }
+
+        if (commandKey === "clear") {
+          cliOutput.innerHTML = "";
+          cliInput.value = "";
+          cliInput.focus();
+          return;
+        }
+
+        appendCliPrompt(commandText);
+
+        if (cliHandlers[commandKey]) {
+          cliHandlers[commandKey]();
+        } else {
+          appendCliLine(`<span class="cli-shell-error">command not found:</span> ${escapeHtml(commandText)}`);
+          appendCliLine("&nbsp;&nbsp;type help to see available commands.", "cli-shell-dim");
+        }
+
+        cliInput.value = "";
+        cliInput.focus();
+      }
+
+      function completeCommand(partial) {
+        const matches = cliCommands.filter((command) => command.startsWith(partial));
+
+        if (matches.length === 0) {
+          return partial;
+        }
+
+        if (matches.length === 1) {
+          return matches[0];
+        }
+
+        let prefix = matches[0];
+
+        for (let index = 1; index < matches.length; index += 1) {
+          while (!matches[index].startsWith(prefix) && prefix.length > 0) {
+            prefix = prefix.slice(0, -1);
+          }
+        }
+
+        return prefix || partial;
+      }
+
+      function resizeCliMatrix() {
+        const scale = window.devicePixelRatio || 1;
+        cliMatrixWidth = cliBody.clientWidth;
+        cliMatrixHeight = cliBody.clientHeight;
+        cliMatrix.width = Math.floor(cliMatrixWidth * scale);
+        cliMatrix.height = Math.floor(cliMatrixHeight * scale);
+        cliMatrix.style.width = `${cliMatrixWidth}px`;
+        cliMatrix.style.height = `${cliMatrixHeight}px`;
+        const cliMatrixContext = cliMatrix.getContext("2d");
+        cliMatrixContext.setTransform(scale, 0, 0, scale, 0, 0);
+        cliDrops = Array.from({ length: Math.ceil(cliMatrixWidth / cliColumnWidth) }, () => Math.random() * -cliMatrixHeight);
+      }
+
+      function drawCliMatrix() {
+        const cliMatrixContext = cliMatrix.getContext("2d");
+        cliMatrixContext.fillStyle = "rgba(10, 15, 10, 0.05)";
+        cliMatrixContext.fillRect(0, 0, cliMatrixWidth, cliMatrixHeight);
+        cliMatrixContext.fillStyle = "#00e676";
+        cliMatrixContext.font = '14px "IBM Plex Mono", "Courier New", monospace';
+
+        cliDrops.forEach((drop, index) => {
+          const glyph = cliMatrixChars[Math.floor(Math.random() * cliMatrixChars.length)];
+          cliMatrixContext.fillText(glyph, index * cliColumnWidth, drop);
+          if (drop > cliMatrixHeight && Math.random() < 0.025) {
+            cliDrops[index] = 0;
+          } else {
+            cliDrops[index] = drop + cliColumnWidth;
+          }
+        });
+      }
+
+      async function bootCli() {
+        appendCliLine("Initializing session...");
+        await new Promise((resolve) => setTimeout(resolve, 120));
+        appendCliLine('Loading profile... <span class="cli-shell-ok">OK</span>');
+        await new Promise((resolve) => setTimeout(resolve, 120));
+        appendCliLine('Mounting toolchain... <span class="cli-shell-ok">OK</span>');
+        appendCliBlank();
+        appendCliLine(cliDivider, "cli-shell-divider");
+        appendCliLine("  SOC ANALYST // AI SECURITY RESEARCHER", "cli-shell-accent");
+        appendCliLine(cliDivider, "cli-shell-divider");
+        appendCliBlank();
+        appendCliLine("Type help for available commands.");
+        await new Promise((resolve) => setTimeout(resolve, 300));
+        runCliCommand("help", { skipHistory: true });
+      }
+
+      cliRoot.addEventListener("click", (event) => {
+        if (!event.target.closest("a")) {
+          cliInput.focus();
+        }
+      });
+
+      cliInput.addEventListener("keydown", (event) => {
+        if (event.key === "Enter") {
+          event.preventDefault();
+          runCliCommand(cliInput.value);
+          return;
+        }
+
+        if (event.key === "ArrowUp") {
+          event.preventDefault();
+          if (!cliHistory.length) {
+            return;
+          }
+          cliHistoryIndex = Math.max(0, cliHistoryIndex - 1);
+          cliInput.value = cliHistory[cliHistoryIndex];
+          return;
+        }
+
+        if (event.key === "ArrowDown") {
+          event.preventDefault();
+          if (!cliHistory.length) {
+            return;
+          }
+          cliHistoryIndex = Math.min(cliHistory.length, cliHistoryIndex + 1);
+          cliInput.value = cliHistoryIndex >= cliHistory.length ? "" : cliHistory[cliHistoryIndex];
+          return;
+        }
+
+        if (event.key === "Tab") {
+          event.preventDefault();
+          const partial = cliInput.value.trim().toLowerCase();
+          if (!partial) {
+            return;
+          }
+          cliInput.value = completeCommand(partial);
+        }
+      });
+
+      resizeCliMatrix();
+      window.addEventListener("resize", resizeCliMatrix);
+      setInterval(drawCliMatrix, 60);
+      cliInput.focus();
+      bootCli();
+    })();
   </script>
 </body>
 </html>
