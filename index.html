@@ -96,6 +96,48 @@
       min-height: 52px;
     }
 
+    .identity-block {
+      backdrop-filter: blur(18px);
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.04));
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 8px;
+      box-shadow: 0 18px 44px rgba(0, 0, 0, 0.24);
+      margin-bottom: 20px;
+      padding: 22px;
+    }
+
+    .identity-block h2 {
+      font-size: 1.5rem;
+      margin: 0 0 12px;
+    }
+
+    .identity-block p {
+      color: var(--muted);
+      line-height: 1.7;
+      margin: 0 0 16px;
+      max-width: 760px;
+    }
+
+    .identity-focus {
+      display: grid;
+      gap: 10px;
+    }
+
+    .identity-focus strong {
+      color: var(--cyan);
+      font-family: "Cascadia Mono", "SFMono-Regular", Consolas, monospace;
+      font-size: 0.86rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .identity-focus ul {
+      color: var(--text);
+      line-height: 1.65;
+      margin: 0;
+      padding-left: 20px;
+    }
+
     .brand {
       color: var(--text);
       font-size: 0.9rem;
@@ -275,6 +317,43 @@
     .status b {
       color: var(--text);
       font-size: 1rem;
+    }
+
+    .metrics-strip {
+      display: grid;
+      gap: 14px;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      margin-top: -8px;
+      padding-bottom: 40px;
+    }
+
+    .metric {
+      backdrop-filter: blur(18px);
+      background: var(--panel-strong);
+      border: 1px solid rgba(255, 255, 255, 0.13);
+      border-radius: 8px;
+      box-shadow: 0 18px 44px rgba(0, 0, 0, 0.24);
+      min-height: 100%;
+      padding: 16px 18px;
+    }
+
+    .metric-value {
+      color: var(--text);
+      display: block;
+      font-family: "Cascadia Mono", "SFMono-Regular", Consolas, monospace;
+      font-size: 1.05rem;
+      font-weight: 800;
+      line-height: 1.4;
+      margin-bottom: 6px;
+    }
+
+    .metric-label {
+      color: var(--muted);
+      display: block;
+      font-family: "Cascadia Mono", "SFMono-Regular", Consolas, monospace;
+      font-size: 0.78rem;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
     }
 
     .section {
@@ -479,6 +558,42 @@
       margin: 0;
     }
 
+    .project-links,
+    .publication-links,
+    .contact-secondary {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .project-links {
+      margin-top: 18px;
+    }
+
+    .publication-links {
+      margin-top: 18px;
+    }
+
+    .contact-actions {
+      align-items: flex-start;
+      display: grid;
+      gap: 12px;
+      justify-items: start;
+    }
+
+    .contact-secondary .glass-button {
+      min-height: 40px;
+      padding: 10px 14px;
+    }
+
+    .status-line {
+      color: var(--muted);
+      font-family: "Cascadia Mono", "SFMono-Regular", Consolas, monospace;
+      font-size: 0.84rem;
+      line-height: 1.7;
+      margin: 0 0 12px;
+    }
+
     .credential img {
       aspect-ratio: 16 / 9;
       border-bottom: 1px solid rgba(255, 255, 255, 0.13);
@@ -533,6 +648,10 @@
         padding-top: 56px;
       }
 
+      .metrics-strip {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
       h1 {
         font-size: 3.2rem;
       }
@@ -566,6 +685,10 @@
         flex-direction: column;
       }
 
+      .contact-actions {
+        justify-items: stretch;
+      }
+
       .glass-button,
       .nav-link {
         width: 100%;
@@ -593,14 +716,28 @@
   <div class="scanline" aria-hidden="true"></div>
 
   <main class="page">
+    <section class="identity-block" aria-label="Research identity">
+      <h2>SOC Analyst &amp; AI Security Researcher</h2>
+      <p>I study how adversarial behaviors propagate across AI agents and how multi-agent systems fail under semantic attacks.</p>
+      <div class="identity-focus">
+        <strong>Focus</strong>
+        <ul>
+          <li>Prompt injection &amp; context poisoning</li>
+          <li>Multi-agent adversarial dynamics</li>
+          <li>Detection vs behavioral drift</li>
+        </ul>
+      </div>
+    </section>
+
     <nav class="nav" aria-label="Primary navigation">
       <a class="brand" href="/">Mohamed Salah Eldin</a>
       <div class="nav-links">
         <a class="nav-link" href="#focus">Focus</a>
         <a class="nav-link" href="#projects">Projects</a>
-        <a class="nav-link" href="#bloodplague-case-study">Bloodplague</a>
-        <a class="nav-link" href="#case-study">Moltbook</a>
+        <a class="nav-link" href="#epidemic-lab-case-study">Case Study: Epidemic Lab</a>
+        <a class="nav-link" href="#moltbook-case-study">Case Study: Moltbook Agent Warfare (Sancta Observations)</a>
         <a class="nav-link" href="#credentials">Credentials</a>
+        <a class="nav-link" href="#research-output">Research Output</a>
         <a class="nav-link" href="#contact">Contact</a>
       </div>
     </nav>
@@ -650,6 +787,25 @@
       </aside>
     </section>
 
+    <section class="metrics-strip" aria-label="Project metrics">
+      <article class="metric">
+        <span class="metric-value">22,000+</span>
+        <span class="metric-label">Events</span>
+      </article>
+      <article class="metric">
+        <span class="metric-value">R_ai &asymp; 2.1</span>
+        <span class="metric-label">Propagation Rate</span>
+      </article>
+      <article class="metric">
+        <span class="metric-value">C2 kill chain</span>
+        <span class="metric-label">Validated</span>
+      </article>
+      <article class="metric">
+        <span class="metric-value">9.6h</span>
+        <span class="metric-label">Soak Run</span>
+      </article>
+    </section>
+
     <section class="section" id="focus">
       <div class="section-title">
         <h2>Focus</h2>
@@ -668,19 +824,19 @@
       </div>
       <div class="project-grid">
         <article class="project">
-          <h3>Bloodplague</h3>
-          <p>AI adversarial simulation platform for testing agent behavior, prompt injection pressure, and defensive controls.</p>
+          <h3>Epidemic Lab</h3>
+          <p>Multi-agent AI adversarial simulation platform. Models behavioral contamination propagation across LLM-powered agents with a full SIEM pipeline, C2 kill chain layer, and operator CLI.</p>
         </article>
         <article class="project">
           <h3>Sancta</h3>
-          <p>Autonomous AI agent work with security layers, telemetry, and SIEM dashboard experiments.</p>
+          <p>SANCTA-GPT is an autonomous LLM agent with a multi-stage security training pipeline &mdash; covering hardening, risk, curriculum, and balanced data pools &mdash; plus prompt injection detection, behavioral drift monitoring, and telemetry logging. The Moltbook case study documents observed cross-agent injection and semantic drift conditions from live SANCTA logs.</p>
         </article>
       </div>
     </section>
 
-    <section class="section" id="bloodplague-case-study">
+    <section class="section" id="epidemic-lab-case-study">
       <div class="section-title">
-        <h2>Case Study: Epidemic Lab (Bloodplague)</h2>
+        <h2>Case Study: Epidemic Lab</h2>
       </div>
       <div class="case-grid">
         <article class="case-card wide">
@@ -703,6 +859,14 @@
             <p>The simulation includes Courier agents as ingress attackers, Analyst agents as relay layers, a Guardian agent as the terminal defender, and an Orchestrator that coordinates execution. Agents exchange messages over a bus and combine probabilistic state transitions with LLM-driven reasoning during interaction.</p>
             <p class="mono-line">Courier-1 / Courier-2 -&gt; Analyst-1 / Analyst-2 -&gt; Guardian</p>
             <p class="mono-line">Orchestrator = control plane</p>
+          </div>
+        </article>
+
+        <article class="case-card">
+          <h3>Stack</h3>
+          <div class="case-copy tight">
+            <p class="mono-line">Docker Compose &middot; FastAPI &middot; Redis &middot; Ollama &middot; Python</p>
+            <p class="mono-line">SIEM pipeline &middot; Campaign tracker &middot; Operator CLI (Typer/Rich)</p>
           </div>
         </article>
 
@@ -735,48 +899,62 @@
         <article class="case-card">
           <h3>Current Findings</h3>
           <div class="case-copy">
-            <p>Current experiments show propagation inside the analyst layer, no successful compromise of the Guardian, and strong containment under current conditions.</p>
-            <p>The present architecture therefore demonstrates containment, but it does not yet show realistic degradation or collapse dynamics. Epidemic success is not yet achievable under the current rules, and that is an honest research outcome rather than a hidden weakness.</p>
+            <p>Soak run <code>soak_run_08</code> validated end-to-end C2 kill chain functionality across approximately 9.6 hours of continuous simulation. The run generated over 22,000 events and confirmed attacker progression through <code>ESTABLISH_C2</code> objectives to the <code>EXFILTRATION</code> kill chain stage.</p>
+            <ul class="security-list">
+              <li>Empirical reproductive number <code>R_ai</code> &asymp; 2.1, indicating super-critical propagation dynamics above the epidemic threshold.</li>
+              <li>OLS regression on block ratio trends confirmed statistically significant defender degradation over simulation time.</li>
+              <li>Shannon entropy analysis of agent state distributions showed increasing system disorder correlated with attacker progression.</li>
+              <li>Guardian containment held at early stages but exhibited measurable false-negative drift under sustained multi-hop pressure.</li>
+            </ul>
+            <p>These results constitute publication-quality output assessed as suitable for venues including AISec, IEEE S&amp;P workshops, USENIX Security workshop tracks, and arXiv <code>cs.CR</code>.</p>
           </div>
         </article>
 
         <article class="case-card">
           <h3>Key Insight</h3>
           <div class="subtle-callout">
-            <p>The current system shows that propagation is possible, but true epidemic behavior requires degradation, trust dynamics, and persistent contamination.</p>
+            <p>Super-critical propagation (<code>R_ai &gt; 1</code>) is achievable in LLM-powered multi-agent topologies without exploiting traditional software vulnerabilities. Behavioral contamination spreads through trust relationships and communication paths, and defender degradation is measurable and statistically significant under sustained adversarial pressure.</p>
           </div>
         </article>
 
         <article class="case-card">
-          <h3>Limitations</h3>
+          <h3>Current Limitations (v1 Architecture)</h3>
           <ul class="security-list">
-            <li>No trust modeling between agents.</li>
-            <li>No persistent infection state with lasting contamination effects.</li>
-            <li>No Guardian degradation mechanism.</li>
-            <li>Current conditions bias the system toward containment.</li>
-            <li>Agent interactions do not yet fully express open-ended sandboxed AI behavior.</li>
-            <li>Topology behavior is still constrained rather than emergent.</li>
+            <li>Trust scoring between agents is static rather than dynamic.</li>
+            <li>Persistent infection state does not yet carry memory effects across simulation resets.</li>
+            <li>Guardian degradation is empirically observed but not yet modeled as an explicit architectural mechanism.</li>
+            <li>Topology behavior is partially constrained; emergent dynamics are bounded by current agent cognition tiers.</li>
           </ul>
         </article>
 
-        <article class="case-card">
-          <h3>Future Work</h3>
-          <ul class="security-list">
-            <li>Introduce Guardian degradation.</li>
-            <li>Add trust-based propagation.</li>
-            <li>Add persistent contamination / memory effects.</li>
-            <li>Improve emergent multi-agent interaction realism.</li>
-            <li>Reduce over-restriction so topology behavior better reflects adversarial AI ecosystems.</li>
-            <li>Study conditions that lead to actual Guardian failure.</li>
-          </ul>
+        <article class="case-card wide">
+          <h3>v2 Architecture (In Development)</h3>
           <div class="case-copy tight">
-            <p>The next phase of the project is focused on moving from guaranteed containment toward realistic failure conditions.</p>
+            <p>The next phase refactors the platform around a 5-agent office topology with the following additions:</p>
+            <ul class="security-list">
+              <li>8-state epidemic state machine: <code>S / E / I_r / I_c / I_x / Q / R / P</code>.</li>
+              <li>Dynamic trust scoring and phenotype configuration per agent.</li>
+              <li>Cognition tiers with distinct reasoning profiles.</li>
+              <li>Local quarantine model replacing global containment.</li>
+              <li>Operator CLI built with Typer and Rich.</li>
+              <li>Continued SIEM dashboard with campaign tracking and trace/investigation tooling.</li>
+            </ul>
+            <p>The research goal for v2 is to move from empirically observed degradation toward a fully modeled Guardian failure condition with reproducible collapse dynamics.</p>
+          </div>
+        </article>
+
+        <article class="case-card wide">
+          <div class="case-copy tight">
+            <p>Source code is available on GitHub. The repository includes simulation core, SIEM pipeline, operator CLI, and soak run artifacts.</p>
+            <div class="project-links">
+              <a class="glass-button primary" href="https://github.com/Mosalah992">View on GitHub &rarr;</a>
+            </div>
           </div>
         </article>
       </div>
     </section>
 
-    <section class="section" id="case-study">
+    <section class="section" id="moltbook-case-study">
       <div class="section-title">
         <h2>Case Study: Moltbook Agent Warfare (Sancta Observations)</h2>
       </div>
@@ -895,15 +1073,32 @@
       </div>
     </section>
 
+    <section class="section" id="research-output">
+      <div class="section-title">
+        <h2>Research Output</h2>
+      </div>
+      <article class="case-card wide">
+        <h3>Epidemic Lab: Adversarial Propagation in LLM-Powered Multi-Agent Systems</h3>
+        <p class="status-line">Status: Manuscript in preparation. Target venues: AISec @ CCS &middot; IEEE S&amp;P Workshops &middot; USENIX Security Workshop Tracks &middot; arXiv cs.CR</p>
+        <p>A formal study of behavioral contamination propagation in LLM-powered multi-agent environments. Empirical results include super-critical reproductive dynamics (<code>R_ai</code> &asymp; 2.1), statistically confirmed defender degradation via OLS regression, and Shannon entropy analysis of agent-state distributions across a 9.6-hour, 22,000+ event simulation.</p>
+        <div class="publication-links">
+          <a class="glass-button primary" href="mailto:mosalah.desouki@gmail.com">Contact for preprint &rarr;</a>
+        </div>
+      </article>
+    </section>
+
     <section class="section" id="contact">
       <div class="contact-band">
         <div>
           <h2>Let's connect.</h2>
-          <p>Open to cybersecurity, SOC, DFIR, and AI security conversations.</p>
+          <p>I'm open to SOC, DFIR, AI security research, and red-team engineering roles. If you're working on adversarial AI, multi-agent security, or LLM red-teaming, I want to hear from you.</p>
         </div>
-        <div class="actions">
-          <a class="glass-button primary" href="/resume">Resume</a>
-          <a class="glass-button" href="mailto:mosalah.desouki@gmail.com">Email</a>
+        <div class="contact-actions">
+          <a class="glass-button primary" href="mailto:mosalah.desouki@gmail.com">Send an Email &rarr;</a>
+          <div class="contact-secondary">
+            <a class="glass-button" href="/resume">Resume</a>
+            <a class="glass-button" href="https://www.linkedin.com/in/mohamedsalah-blue-team">LinkedIn</a>
+          </div>
         </div>
       </div>
     </section>
