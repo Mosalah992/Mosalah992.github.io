@@ -94,11 +94,11 @@
       background: #111811;
       border-bottom: 1px solid #1a2e1a;
       display: flex;
-      gap: 18px;
+      gap: 14px;
       justify-content: space-between;
-      margin-bottom: 18px;
-      min-height: 56px;
-      padding: 12px 16px;
+      margin-bottom: 14px;
+      min-height: 48px;
+      padding: 10px 14px;
       position: sticky;
       top: 0;
       z-index: 100;
@@ -107,7 +107,7 @@
     .brand {
       color: #69f0ae;
       font-family: "IBM Plex Mono", "Courier New", monospace;
-      font-size: 0.9rem;
+      font-size: 0.84rem;
       font-weight: 600;
       letter-spacing: 0.02em;
       white-space: nowrap;
@@ -117,7 +117,7 @@
       align-items: center;
       display: flex;
       flex-wrap: wrap;
-      gap: 14px;
+      gap: 12px;
       justify-content: flex-end;
     }
 
@@ -140,7 +140,7 @@
     .nav-link {
       color: #4a6a4a;
       font-family: "IBM Plex Mono", "Courier New", monospace;
-      font-size: 0.9rem;
+      font-size: 0.82rem;
       line-height: 1.4;
       transition: color 180ms ease;
     }
@@ -289,43 +289,6 @@
     .status b {
       color: var(--text);
       font-size: 1rem;
-    }
-
-    .metrics-strip {
-      display: grid;
-      gap: 14px;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      margin-top: -8px;
-      padding-bottom: 40px;
-    }
-
-    .metric {
-      backdrop-filter: blur(18px);
-      background: var(--panel-strong);
-      border: 1px solid rgba(255, 255, 255, 0.13);
-      border-radius: 8px;
-      box-shadow: 0 18px 44px rgba(0, 0, 0, 0.24);
-      min-height: 100%;
-      padding: 16px 18px;
-    }
-
-    .metric-value {
-      color: var(--text);
-      display: block;
-      font-family: "Cascadia Mono", "SFMono-Regular", Consolas, monospace;
-      font-size: 1.05rem;
-      font-weight: 800;
-      line-height: 1.4;
-      margin-bottom: 6px;
-    }
-
-    .metric-label {
-      color: var(--muted);
-      display: block;
-      font-family: "Cascadia Mono", "SFMono-Regular", Consolas, monospace;
-      font-size: 0.78rem;
-      letter-spacing: 0.03em;
-      text-transform: uppercase;
     }
 
     .section {
@@ -620,10 +583,6 @@
         padding-top: 56px;
       }
 
-      .metrics-strip {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
       h1 {
         font-size: 3.2rem;
       }
@@ -636,11 +595,12 @@
 
       .nav {
         align-items: flex-start;
-        gap: 12px;
-        padding: 12px 14px;
+        gap: 10px;
+        padding: 10px 12px;
       }
 
       .nav-links {
+        gap: 10px;
         justify-content: flex-start;
       }
 
@@ -1095,25 +1055,6 @@
           </div>
         </div>
       </div>
-    </section>
-
-    <section class="metrics-strip" aria-label="Project metrics">
-      <article class="metric">
-        <span class="metric-value">22,000+</span>
-        <span class="metric-label">Events</span>
-      </article>
-      <article class="metric">
-        <span class="metric-value">R_ai &asymp; 2.1</span>
-        <span class="metric-label">Propagation Rate</span>
-      </article>
-      <article class="metric">
-        <span class="metric-value">C2 kill chain</span>
-        <span class="metric-label">Validated</span>
-      </article>
-      <article class="metric">
-        <span class="metric-value">9.6h</span>
-        <span class="metric-label">Soak Run</span>
-      </article>
     </section>
 
     <section class="section" id="focus">
