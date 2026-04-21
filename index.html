@@ -91,70 +91,36 @@
 
     .nav {
       align-items: center;
+      background: #111811;
+      border-bottom: 1px solid #1a2e1a;
       display: flex;
-      gap: 16px;
+      gap: 18px;
       justify-content: space-between;
-      min-height: 52px;
-    }
-
-    .identity-block {
-      backdrop-filter: blur(18px);
-      background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.04));
-      border: 1px solid rgba(255, 255, 255, 0.14);
-      border-radius: 8px;
-      box-shadow: 0 18px 44px rgba(0, 0, 0, 0.24);
-      margin-bottom: 20px;
-      padding: 22px;
-    }
-
-    .identity-block h2 {
-      font-size: 1.5rem;
-      margin: 0 0 12px;
-    }
-
-    .identity-block p {
-      color: var(--muted);
-      line-height: 1.7;
-      margin: 0 0 16px;
-      max-width: 760px;
-    }
-
-    .identity-focus {
-      display: grid;
-      gap: 10px;
-    }
-
-    .identity-focus strong {
-      color: var(--cyan);
-      font-family: "Cascadia Mono", "SFMono-Regular", Consolas, monospace;
-      font-size: 0.86rem;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-    }
-
-    .identity-focus ul {
-      color: var(--text);
-      line-height: 1.65;
-      margin: 0;
-      padding-left: 20px;
+      margin-bottom: 18px;
+      min-height: 56px;
+      padding: 12px 16px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
     }
 
     .brand {
-      color: var(--text);
+      color: #69f0ae;
+      font-family: "IBM Plex Mono", "Courier New", monospace;
       font-size: 0.9rem;
-      font-weight: 800;
-      text-transform: uppercase;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      white-space: nowrap;
     }
 
     .nav-links {
       align-items: center;
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
+      gap: 14px;
       justify-content: flex-end;
     }
 
-    .nav-link,
     .glass-button {
       align-items: center;
       backdrop-filter: blur(18px);
@@ -172,13 +138,18 @@
     }
 
     .nav-link {
+      color: #4a6a4a;
+      font-family: "IBM Plex Mono", "Courier New", monospace;
       font-size: 0.9rem;
-      min-height: 38px;
-      padding: 9px 12px;
+      line-height: 1.4;
+      transition: color 180ms ease;
     }
 
-    .glass-button:hover,
     .nav-link:hover {
+      color: #00e676;
+    }
+
+    .glass-button:hover {
       border-color: rgba(0, 245, 255, 0.64);
       box-shadow: 0 0 30px var(--shadow), inset 0 1px 0 rgba(255, 255, 255, 0.24);
       transform: translateY(-2px);
@@ -665,7 +636,8 @@
 
       .nav {
         align-items: flex-start;
-        flex-direction: column;
+        gap: 12px;
+        padding: 12px 14px;
       }
 
       .nav-links {
@@ -690,8 +662,7 @@
         justify-items: stretch;
       }
 
-      .glass-button,
-      .nav-link {
+      .glass-button {
         width: 100%;
       }
 
@@ -1088,26 +1059,13 @@
   <div class="scanline" aria-hidden="true"></div>
 
   <main class="page">
-    <section class="identity-block" aria-label="Research identity">
-      <h2>SOC Analyst &amp; AI Security Researcher</h2>
-      <p>I study how adversarial behaviors propagate across AI agents and how multi-agent systems fail under semantic attacks.</p>
-      <div class="identity-focus">
-        <strong>Focus</strong>
-        <ul>
-          <li>Prompt injection &amp; context poisoning</li>
-          <li>Multi-agent adversarial dynamics</li>
-          <li>Detection vs behavioral drift</li>
-        </ul>
-      </div>
-    </section>
-
     <nav class="nav" aria-label="Primary navigation">
-      <a class="brand" href="/">Mohamed Salah Eldin</a>
+      <a class="brand" href="/">analyst@mosalah</a>
       <div class="nav-links">
         <a class="nav-link" href="#focus">Focus</a>
         <a class="nav-link" href="#projects">Projects</a>
-        <a class="nav-link" href="#epidemic-lab-case-study">Case Study: Epidemic Lab</a>
-        <a class="nav-link" href="#moltbook-case-study">Case Study: Moltbook Agent Warfare (Sancta Observations)</a>
+        <a class="nav-link" href="#epidemic-lab-case-study">Epidemic Lab</a>
+        <a class="nav-link" href="#moltbook-case-study">Moltbook</a>
         <a class="nav-link" href="#credentials">Credentials</a>
         <a class="nav-link" href="#research-output">Research Output</a>
         <a class="nav-link" href="#contact">Contact</a>
@@ -1788,6 +1746,8 @@
       }
 
       async function bootCli() {
+        cliOutput.innerHTML = "";
+        cliInput.value = "";
         appendCliLine("Initializing session...");
         await new Promise((resolve) => setTimeout(resolve, 120));
         appendCliLine('Loading profile... <span class="cli-shell-ok">OK</span>');
@@ -1799,6 +1759,7 @@
         appendCliLine(cliDivider, "cli-shell-divider");
         appendCliBlank();
         appendCliLine("Type help for available commands.");
+        appendCliBlank();
         await new Promise((resolve) => setTimeout(resolve, 300));
         runCliCommand("help", { skipHistory: true });
       }
