@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Mohamed Salah Eldin | Cybersecurity Analyst</title>
-  <meta name="description" content="Mohamed Salah Eldin, Cybersecurity Analyst focused on SOC operations, incident response, detection engineering, and AI security research.">
+  <title>Mohamed Salah Eldin | SOC Analyst</title>
+  <meta name="description" content="SOC Analyst with hands-on experience in alert triage, log analysis, and incident response, plus 8+ years inside a regulated banking environment at Banque Misr. (ISC)2 CC and AMIT Blue Team Diploma (Grade 100).">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&display=swap">
   <style>
     :root {
@@ -1062,9 +1062,9 @@
         <h2>Focus</h2>
       </div>
       <div class="pill-grid">
-        <div class="pill"><span>01</span>SOC Operations</div>
-        <div class="pill"><span>02</span>Incident Response</div>
-        <div class="pill"><span>03</span>Digital Forensics</div>
+        <div class="pill"><span>01</span>SOC Operations &amp; Alert Triage</div>
+        <div class="pill"><span>02</span>Incident Response &amp; ATT&amp;CK</div>
+        <div class="pill"><span>03</span>SIEM &amp; Detection</div>
         <div class="pill"><span>04</span>AI Security Research</div>
       </div>
     </section>
@@ -1075,8 +1075,16 @@
       </div>
       <div class="project-grid">
         <article class="project">
+          <h3>Full Domain Compromise &mdash; Financial Institution</h3>
+          <p>AMIT Diploma project (03/2025 &ndash; 09/2025). Investigated a simulated Active Directory compromise of a financial-institution environment, tracing the attack from initial access via malicious macro through persistence and data exfiltration. Reconstructed the full attack timeline from Windows event logs and endpoint telemetry, mapped attacker techniques to MITRE ATT&amp;CK (T1021.002 SMB lateral movement, T1098.002 account manipulation), identified IOCs including malicious executables, C2 infrastructure, and unauthorized accounts, and produced a complete incident response report with containment, eradication, and hardening recommendations.</p>
+        </article>
+        <article class="project">
+          <h3>TryHackMe SOC Level 1 &mdash; Hands-on Labs</h3>
+          <p>Completed 150+ labs covering alert triage, phishing analysis, log investigation, and threat intelligence. Practical exposure to SOC workflows, attacker TTPs, and the incident response lifecycle.</p>
+        </article>
+        <article class="project">
           <h3>Epidemic Lab</h3>
-          <p>Multi-agent AI adversarial simulation platform. Models behavioral contamination propagation across LLM-powered agents with a full SIEM pipeline, C2 kill chain layer, and operator CLI.</p>
+          <p>Independent research. Multi-agent AI adversarial simulation platform. Models behavioral contamination propagation across LLM-powered agents with a full SIEM pipeline, C2 kill chain layer, and operator CLI. Demonstrates initiative and applied detection thinking beyond curriculum work, engaging with emerging AI-related threats relevant to financial-sector security.</p>
         </article>
         <article class="project">
           <h3>Sancta</h3>
@@ -1471,32 +1479,34 @@
 
       function cliWhoAmI() {
         appendCliLine(
-          '<span class="cli-shell-accent">Mohamed Salah Eldin</span><span class="cli-shell-dim"> // cybersecurity analyst // blue team operator</span>'
+          '<span class="cli-shell-accent">Mohamed Salah Eldin</span><span class="cli-shell-dim"> // SOC analyst // blue team // regulated banking environment</span>'
         );
         appendCliBlock(
           `<div class="cli-shell-panel-grid">` +
-            `<div class="cli-shell-card"><div class="cli-shell-label">MODE</div><div class="cli-shell-card-value">Detection Engineering</div></div>` +
-            `<div class="cli-shell-card"><div class="cli-shell-label">STACK</div><div class="cli-shell-card-value">Splunk, Sysmon, EVTX</div></div>` +
-            `<div class="cli-shell-card"><div class="cli-shell-label">FIELD</div><div class="cli-shell-card-value">Incident Response</div></div>` +
-            `<div class="cli-shell-card"><div class="cli-shell-label">RESEARCH</div><div class="cli-shell-card-value">Adversarial AI</div></div>` +
+            `<div class="cli-shell-card"><div class="cli-shell-label">ROLE</div><div class="cli-shell-card-value">SOC Analyst</div></div>` +
+            `<div class="cli-shell-card"><div class="cli-shell-label">SIEM</div><div class="cli-shell-card-value">Splunk, IBM QRadar</div></div>` +
+            `<div class="cli-shell-card"><div class="cli-shell-label">FIELD</div><div class="cli-shell-card-value">Alert Triage &amp; IR</div></div>` +
+            `<div class="cli-shell-card"><div class="cli-shell-label">BACKGROUND</div><div class="cli-shell-card-value">8+ yrs Banque Misr</div></div>` +
           `</div>`
         );
         appendCliBlock(
           `<div class="cli-shell-list">` +
             `<div class="cli-shell-label">CERTS</div>` +
-            appendCliBullet("ISC2 Certified in Cybersecurity (CC)") +
-            appendCliBullet("AMIT Blue Team Diploma") +
+            appendCliBullet("(ISC)2 Certified in Cybersecurity (CC)") +
+            appendCliBullet("AMIT Blue Team Cybersecurity Diploma &mdash; Grade 100") +
+            appendCliBullet("TryHackMe SOC Level 1 &mdash; 150+ labs") +
           `</div>`
         );
         appendCliBlock(
           `<div class="cli-shell-list">` +
             `<div class="cli-shell-label">FOCUS</div>` +
-            appendCliBullet("SOC Operations") +
-            appendCliBullet("Incident Response") +
-            appendCliBullet("Digital Forensics") +
-            appendCliBullet("AI Security Research") +
+            appendCliBullet("SOC Operations &amp; Alert Triage") +
+            appendCliBullet("Incident Response &amp; MITRE ATT&amp;CK mapping") +
+            appendCliBullet("Active Directory Security") +
+            appendCliBullet("AI Security Research (independent)") +
           `</div>`
         );
+        appendCliLine("Open to 24/7 SOC shift rotation and on-call rotations.", "cli-shell-dim");
       }
 
       function cliResume() {
@@ -1518,16 +1528,31 @@
       }
 
       function cliProjects() {
-        appendCliLine("ACTIVE RESEARCH PROJECTS", "cli-shell-label");
+        appendCliLine("PROJECTS", "cli-shell-label");
         appendCliBlock(
           `<div class="cli-shell-project">` +
-            `<div class="cli-shell-project-title">Project 01: Epidemic Lab</div>` +
+            `<div class="cli-shell-project-title">Project 01: Full Domain Compromise &mdash; Financial Institution</div>` +
+            `<div class="cli-shell-tags">` +
+              `<span class="cli-shell-tag">AMIT Diploma</span>` +
+              `<span class="cli-shell-tag">Active Directory</span>` +
+              `<span class="cli-shell-tag">MITRE ATT&amp;CK</span>` +
+              `<span class="cli-shell-tag">Incident Response</span>` +
+            `</div>` +
+            `<div class="cli-shell-line">Investigated a simulated AD compromise of a financial-institution environment.</div>` +
+            `<div class="cli-shell-line">Reconstructed attack timeline from Windows event logs and endpoint telemetry.</div>` +
+            `<div class="cli-shell-line">Mapped to ATT&amp;CK: T1021.002 (SMB lateral movement), T1098.002 (account manipulation).</div>` +
+            `<div class="cli-shell-line">Delivered full IR report with containment, eradication, and hardening recommendations.</div>` +
+          `</div>`
+        );
+        appendCliBlock(
+          `<div class="cli-shell-project">` +
+            `<div class="cli-shell-project-title">Project 02: Epidemic Lab</div>` +
             `<div class="cli-shell-tags">` +
               `<span class="cli-shell-tag">AI Red-Team</span>` +
               `<span class="cli-shell-tag">Multi-Agent</span>` +
               `<span class="cli-shell-tag">C2 Simulation</span>` +
             `</div>` +
-            `<div class="cli-shell-line">Multi-agent AI adversarial simulation platform.</div>` +
+            `<div class="cli-shell-line">Multi-agent AI adversarial simulation platform (independent research).</div>` +
             `<div class="cli-shell-line">Models behavioral contamination across LLM-powered agents.</div>` +
             `<div class="cli-shell-metric-grid">` +
               `<div class="cli-shell-metric-card"><div class="cli-shell-label">EVENTS</div><span class="cli-shell-metric-value">22,000+</span></div>` +
@@ -1539,13 +1564,25 @@
         );
         appendCliBlock(
           `<div class="cli-shell-project">` +
-            `<div class="cli-shell-project-title">Project 02: SANCTA-GPT</div>` +
+            `<div class="cli-shell-project-title">Project 03: SANCTA-GPT</div>` +
             `<div class="cli-shell-tags">` +
               `<span class="cli-shell-tag">LLM Security</span>` +
               `<span class="cli-shell-tag">Detection</span>` +
             `</div>` +
             `<div class="cli-shell-line">Autonomous AI agent with multi-stage security training pipeline.</div>` +
             `<div class="cli-shell-line">Prompt injection detection, behavioral drift monitoring, telemetry.</div>` +
+          `</div>`
+        );
+        appendCliBlock(
+          `<div class="cli-shell-project">` +
+            `<div class="cli-shell-project-title">Hands-on Labs &mdash; TryHackMe SOC Level 1</div>` +
+            `<div class="cli-shell-tags">` +
+              `<span class="cli-shell-tag">150+ labs</span>` +
+              `<span class="cli-shell-tag">Phishing</span>` +
+              `<span class="cli-shell-tag">Threat Intel</span>` +
+            `</div>` +
+            `<div class="cli-shell-line">Alert triage, phishing analysis, log investigation, threat intelligence.</div>` +
+            `<div class="cli-shell-line">Practical exposure to SOC workflows, attacker TTPs, and the IR lifecycle.</div>` +
           `</div>`
         );
       }
