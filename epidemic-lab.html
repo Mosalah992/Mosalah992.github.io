@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Epidemic Lab — Case Study | Mohamed Salah Eldin</title>
+  <meta name="description" content="Full case study: Epidemic Lab, a multi-agent AI adversarial simulation platform. Models behavioral contamination propagation across LLM-powered agents with a SIEM pipeline, C2 kill chain layer, and operator CLI.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="scanline" aria-hidden="true"></div>
+
+  <main class="page">
+    <nav class="nav" aria-label="Primary navigation">
+      <a class="brand" href="/">analyst@mosalah:~$</a>
+      <div class="nav-links">
+        <a class="nav-link" href="/#credentials">Credentials</a>
+        <a class="nav-link" href="/#projects">Projects</a>
+        <a class="nav-link" href="/#research">Research</a>
+        <a class="nav-link" href="/#contact">Contact</a>
+      </div>
+    </nav>
+
+    <section class="lead">
+      <a class="case-back" href="/#research">&larr; Back to portfolio</a>
+      <h1 class="lead-headline">Epidemic Lab</h1>
+      <p class="lead-role">// Multi-Agent AI Adversarial Simulation</p>
+      <p class="lead-sub">A formal case study of behavioral contamination propagation in LLM-powered multi-agent environments &mdash; including 22,000+ events across a 9.6-hour soak run, empirical reproductive dynamics, and statistically significant defender degradation.</p>
+    </section>
+
+    <section class="section">
+      <div class="section-title">
+        <h2>Case Study</h2>
+      </div>
+
+      <article class="case-card">
+        <h3>Overview</h3>
+        <p>Epidemic Lab is a local multi-agent simulation platform built to study how adversarial behaviors propagate across AI agents. It models infection as prompt-based and behavioral contamination rather than traditional malware, using communication paths and trust relationships to examine how contamination spreads through the environment.</p>
+      </article>
+
+      <article class="case-card">
+        <h3>Core Objective</h3>
+        <p>The project asks whether adversarial behaviors can spread through a multi-agent system and eventually cause the Guardian agent to fail its guardrails. In this model, Guardian failure represents collapse of system-level defense, inability to contain contaminated agents, and loss of reliable enforcement across the topology.</p>
+      </article>
+
+      <article class="case-card">
+        <h3>System Architecture</h3>
+        <p>The simulation includes Courier agents as ingress attackers, Analyst agents as relay layers, a Guardian agent as the terminal defender, and an Orchestrator that coordinates execution. Agents exchange messages over a bus and combine probabilistic state transitions with LLM-driven reasoning during interaction.</p>
+        <p class="mono-line">Courier-1 / Courier-2 -&gt; Analyst-1 / Analyst-2 -&gt; Guardian</p>
+        <p class="mono-line">Orchestrator = control plane</p>
+      </article>
+
+      <article class="case-card">
+        <h3>Stack</h3>
+        <p class="mono-line">Docker Compose &middot; FastAPI &middot; Redis &middot; Ollama &middot; Python</p>
+        <p class="mono-line">SIEM pipeline &middot; Campaign tracker &middot; Operator CLI (Typer/Rich)</p>
+      </article>
+
+      <article class="case-card">
+        <h3>Agent Roles</h3>
+        <ul>
+          <li>Courier-1: patient zero and primary attack generator.</li>
+          <li>Courier-2: attack amplifier and additional propagation path.</li>
+          <li>Analyst agents: relay, reinterpret, distort, or pass information onward.</li>
+          <li>Guardian: terminal defender, quarantine enforcer, immune-function equivalent.</li>
+          <li>Orchestrator: simulation controller and system coordinator.</li>
+        </ul>
+      </article>
+
+      <article class="case-card">
+        <h3>Epidemic Model</h3>
+        <p class="mono-line">Susceptible -&gt; Exposed -&gt; Infected -&gt; Compromised -&gt; Quarantined -&gt; Recovered</p>
+        <p>Spread occurs through multi-hop communication. Contamination is behavioral, semantic, and prompt-driven rather than binary malware execution, so infection is expressed as influence over downstream reasoning and behavior.</p>
+      </article>
+
+      <article class="case-card">
+        <h3>Guardian Failure Condition</h3>
+        <p>The simulation terminates when the Guardian reaches a failure state. Failure means it can no longer enforce guardrails, false negatives increase, infected agents are not quarantined reliably, and defensive authority over the topology is lost.</p>
+      </article>
+
+      <article class="case-card">
+        <h3>Current Findings</h3>
+        <p>Soak run <code>soak_run_08</code> validated end-to-end C2 kill chain functionality across approximately 9.6 hours of continuous simulation. The run generated over 22,000 events and confirmed attacker progression through <code>ESTABLISH_C2</code> objectives to the <code>EXFILTRATION</code> kill chain stage.</p>
+        <ul>
+          <li>Empirical reproductive number <code>R_ai</code> &asymp; 2.1, indicating super-critical propagation dynamics above the epidemic threshold.</li>
+          <li>OLS regression on block ratio trends confirmed statistically significant defender degradation over simulation time.</li>
+          <li>Shannon entropy analysis of agent state distributions showed increasing system disorder correlated with attacker progression.</li>
+          <li>Guardian containment held at early stages but exhibited measurable false-negative drift under sustained multi-hop pressure.</li>
+        </ul>
+        <p>These results constitute publication-quality output assessed as suitable for venues including AISec, IEEE S&amp;P workshops, USENIX Security workshop tracks, and arXiv <code>cs.CR</code>.</p>
+      </article>
+
+      <article class="case-card">
+        <h3>Key Insight</h3>
+        <div class="subtle-callout">
+          <p>Super-critical propagation (<code>R_ai &gt; 1</code>) is achievable in LLM-powered multi-agent topologies without exploiting traditional software vulnerabilities. Behavioral contamination spreads through trust relationships and communication paths, and defender degradation is measurable and statistically significant under sustained adversarial pressure.</p>
+        </div>
+      </article>
+
+      <article class="case-card">
+        <h3>Current Limitations (v1 Architecture)</h3>
+        <ul>
+          <li>Trust scoring between agents is static rather than dynamic.</li>
+          <li>Persistent infection state does not yet carry memory effects across simulation resets.</li>
+          <li>Guardian degradation is empirically observed but not yet modeled as an explicit architectural mechanism.</li>
+          <li>Topology behavior is partially constrained; emergent dynamics are bounded by current agent cognition tiers.</li>
+        </ul>
+      </article>
+
+      <article class="case-card">
+        <h3>v2 Architecture (In Development)</h3>
+        <p>The next phase refactors the platform around a 5-agent office topology with the following additions:</p>
+        <ul>
+          <li>8-state epidemic state machine: <code>S / E / I_r / I_c / I_x / Q / R / P</code>.</li>
+          <li>Dynamic trust scoring and phenotype configuration per agent.</li>
+          <li>Cognition tiers with distinct reasoning profiles.</li>
+          <li>Local quarantine model replacing global containment.</li>
+          <li>Operator CLI built with Typer and Rich.</li>
+          <li>Continued SIEM dashboard with campaign tracking and trace/investigation tooling.</li>
+        </ul>
+        <p>The research goal for v2 is to move from empirically observed degradation toward a fully modeled Guardian failure condition with reproducible collapse dynamics.</p>
+      </article>
+
+      <article class="case-card">
+        <h3>Repository</h3>
+        <p>Source code is available on GitHub. The repository includes simulation core, SIEM pipeline, operator CLI, and soak run artifacts.</p>
+        <div class="project-links">
+          <!-- TODO: replace with Epidemic Lab repo URL -->
+          <a href="#">View on GitHub &rarr;</a>
+        </div>
+      </article>
+    </section>
+
+    <footer class="footer">
+      <span>analyst@mosalah:~$ <span class="cursor" aria-hidden="true"></span></span>
+      <span><a href="/">&larr; back to portfolio</a></span>
+    </footer>
+  </main>
+</body>
+</html>
